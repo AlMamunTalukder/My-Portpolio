@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
-
 import Image from "next/image";
 import {
   BiBriefcase,
@@ -15,16 +13,11 @@ import {
   BiMenu,
   BiX,
 } from "react-icons/bi";
-import { DiGithub } from "react-icons/di";
-import {
-  FaExternalLinkAlt,
-  FaGraduationCap,
-  FaStar,
-  FaWhatsapp,
-} from "react-icons/fa";
-import { CgMail } from "react-icons/cg";
+import { FaExternalLinkAlt, FaGraduationCap, FaWhatsapp } from "react-icons/fa";
 import { FiLinkedin } from "react-icons/fi";
 import { LuGithub } from "react-icons/lu";
+import Link from "next/link";
+import { BsArrowRight } from "react-icons/bs";
 
 // --- DATA CONFIGURATION ---
 const personalInfo = {
@@ -33,55 +26,64 @@ const personalInfo = {
   tagline: "Building scalable web applications and digital experiences.",
   about:
     "I am a frontend-focused Software Engineer with 2+ years of experience building responsive, high-performance web applications using React, Next.js, and Tailwind CSS. I also have solid mid-level backend experience, allowing me to bridge the gap between seamless user interfaces and robust server-side logic. I am passionate about writing clean code and creating intuitive user experiences.",
-  education: "B.Sc in Computer Science & Engineering",
+  education: "B.Sc in Computing",
   location: "Dhaka, Bangladesh",
-  email: "hello@yourdomain.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  resumeLink: "#",
+  email: "almamuntalukder0@gmail.com",
+  github: "https://github.com/AlMamunTalukder",
+  linkedin: "https://www.linkedin.com/in/amtalukder/",
+  resumeLink:
+    "https://drive.google.com/drive/folders/17c_h9xXOWI9bkbSxVCwNeWcnIorXDaoC?usp=sharing",
 };
 
 const experience = [
   {
     id: 1,
-    role: "Frontend Engineer",
-    company: "Tech Solutions Inc.",
+    role: "MID Level Engineer",
+    company: "Softypy.com",
     period: "2023 - Present",
     description:
       "Spearheaded the development of a high-traffic SaaS dashboard. Improved core web vitals by 40% using Next.js server-side rendering and optimized Tailwind CSS architecture.",
-    tech: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+    tech: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Website Live"],
   },
   {
     id: 2,
     role: "Junior Web Developer",
-    company: "Creative Digital Agency",
+    company: "Softypy.com",
     period: "2022 - 2023",
     description:
       "Developed and maintained multiple client websites. Collaborated with UI/UX designers to implement pixel-perfect, responsive designs using React and Material UI.",
-    tech: ["React", "JavaScript", "Material UI", "Node.js"],
+    tech: ["React", "JavaScript", "Material UI", "Node.js", "ShadCN"],
   },
 ];
 
 const projects = [
   {
     id: 1,
-    title: "FinTech Analytics Dashboard",
+    title: "Craft Skills",
     description:
-      "A comprehensive financial dashboard featuring real-time data visualization, dark mode, and complex state management.",
+      "A Full Stack Voice Over Course (LMS) System for Craft Institute. Fully Optimized with next.js, react and node.js",
     image: "/img/project/craft-skills.jpeg",
-    tech: ["Next.js", "Tailwind", "Recharts", "Zustand"],
-    liveUrl: "#",
-    githubUrl: "#",
+    tech: [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "ShadCN",
+      "Node.js",
+      "Mongo DB",
+      "Express",
+    ],
+    liveUrl: "https://craftskillsbd.com/",
+    githubUrl: "https://github.com/AlMamunTalukder/craft-skills-client",
   },
   {
     id: 2,
-    title: "E-Commerce Platform API & UI",
+    title: "Craft Internationl Institute",
     description:
-      "Full-stack e-commerce solution with a custom shopping cart, Stripe integration, and an admin management panel.",
-    image: "/img/project/craft-skills.jpeg",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "Full-stack School Website where fully show how the school features with modern design",
+    image: "/img/project/school.jpeg",
+    tech: ["Next.js", "React", "Node.js", "Express", "MongoDB"],
+    liveUrl: "https://craftinternationalinstitute.com/",
+    githubUrl: "https://github.com/AlMamunTalukder/craft-int-client",
   },
 ];
 
@@ -130,6 +132,10 @@ const skills = [
       "Postman",
       "Agile/Scrum",
       "Responsive Design",
+      "Server Live",
+      "PM2",
+      "WSL",
+      "Linux",
     ],
   },
 ];
@@ -270,12 +276,13 @@ export default function Portfolio() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 animate-[slideUp_0.8s_ease-out_0.6s_both] w-full sm:w-auto px-4">
-            <a
+            <Link
               href={personalInfo.resumeLink}
+              target="_blank"
               className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full bg-white text-slate-950 font-bold hover:bg-slate-200 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-white/10 text-sm md:text-base"
             >
               <BiDownload className="h-5 w-5 md:h-6 md:w-6" /> Download Resume
-            </a>
+            </Link>
             <div className="flex items-center gap-4">
               <a
                 href={personalInfo.github}
@@ -314,8 +321,8 @@ export default function Portfolio() {
             <div className="lg:col-span-3 space-y-4 md:space-y-6 text-slate-300 font-light leading-relaxed text-base md:text-lg bg-gradient-to-br from-white/[0.04] to-transparent p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-white/5 shadow-2xl">
               <p>{personalInfo.about}</p>
               <p>
-                When I&apos;m not writing code, you can find me exploring new web
-                technologies, learning about software architecture, and
+                When I&apos;m not writing code, you can find me exploring new
+                web technologies, learning about software architecture, and
                 constantly pushing myself to write cleaner, more efficient code.
                 My goal is to build products that solve real-world problems.
               </p>
@@ -394,10 +401,15 @@ export default function Portfolio() {
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-1.5 md:mb-2 group-hover:text-cyan-300 transition-colors">
                       {exp.role}
                     </h3>
-                    <p className="text-base md:text-lg text-slate-400 mb-4 md:mb-5 flex items-center gap-2">
+                    <Link
+                      href="https://Softypy.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base md:text-lg text-slate-400 mb-4 md:mb-5 flex items-center gap-2"
+                    >
                       <BiBriefcase className="text-slate-500 shrink-0" />{" "}
                       {exp.company}
-                    </p>
+                    </Link>
                     <p className="text-sm md:text-base text-slate-300 leading-relaxed mb-5 md:mb-6 font-light">
                       {exp.description}
                     </p>
@@ -492,8 +504,6 @@ export default function Portfolio() {
               >
                 {/* Project Image with Scrolling Hover Effect */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-[#0A0A0F] border-b border-white/5 p-3 sm:p-4 md:p-6 pb-0">
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F] to-transparent z-10 pointer-events-none"></div>
-
                   <div className="relative w-full h-full rounded-t-xl overflow-hidden border border-white/10 border-b-0 group-hover:-translate-y-1 md:group-hover:-translate-y-2 transition-transform duration-700">
                     <Image
                       src={project.image}
@@ -509,13 +519,13 @@ export default function Portfolio() {
                       href={project.githubUrl}
                       className="p-2.5 md:p-3 rounded-full bg-black/60 backdrop-blur-xl border border-white/10 text-white hover:text-cyan-400 hover:border-cyan-500/50 transition-all shadow-xl"
                     >
-                      <DiGithub className="w-5 h-5 md:w-5 md:h-5" />
+                      <LuGithub className="w-5 h-5 md:w-5 md:h-5" />
                     </a>
                     <a
                       href={project.liveUrl}
                       className="p-2.5 md:p-3 rounded-full bg-black/60 backdrop-blur-xl border border-white/10 text-white hover:text-cyan-400 hover:border-cyan-500/50 transition-all shadow-xl"
                     >
-                      <FaExternalLinkAlt className="w-4 h-4 md:w-4 md:h-4" />
+                      <FaExternalLinkAlt className="w-5 h-5 md:w-5 md:h-5" />
                     </a>
                   </div>
                 </div>
@@ -543,6 +553,14 @@ export default function Portfolio() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center mt-10">
+            {/* <Link
+              href={"#"}
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-full bg-white text-slate-950 font-bold hover:bg-slate-200 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-white/10 text-sm md:text-base"
+            >
+              Others Projects <BsArrowRight />
+            </Link> */}
+          </div>
         </section>
 
         {/* --- CONTACT / CTA SECTION --- */}
@@ -559,13 +577,13 @@ export default function Portfolio() {
               <span className="text-cyan-400">together.</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-slate-300 mb-8 md:mb-10 max-w-xl mx-auto font-light relative z-10 px-2">
-              I&apos;m currently looking for new opportunities. Whether you have a
-              question or just want to say hi, I&apos;ll try my best to get back to
-              you!
+              I&apos;m currently looking for new opportunities. Whether you have
+              a question or just want to say hi, I&apos;ll try my best to get
+              back to you!
             </p>
 
             <a
-              href={`https://wa.me/8801XXXXXXXXX`} // replace with your number
+              href={`https://wa.me/8801879602662`}
               target="_blank"
               rel="noopener noreferrer"
               className="relative z-10 inline-flex items-center justify-center gap-2 md:gap-3 px-8 md:px-10 py-3.5 md:py-5 rounded-full bg-[#25D366] text-white font-bold text-base md:text-lg hover:bg-[#1ebe5d] hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(37,211,102,0.4)] transition-all duration-300 w-full sm:w-auto"
