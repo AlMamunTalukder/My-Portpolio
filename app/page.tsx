@@ -593,7 +593,9 @@ export default function Portfolio() {
             </a>
 
             <p className="mt-6 md:mt-8 text-xs md:text-sm text-slate-400 font-mono relative z-10 bg-black/20 py-2 px-4 md:px-6 rounded-full  backdrop-blur-sm border border-white/5 break-all">
-              Or email me directly at{" "}
+              {" "}
+              Call <span className="text-cyan-400">01862439094</span>
+              {" "} or email me directly at{" "}
               <span className="text-cyan-400">{personalInfo.email}</span>
             </p>
           </div>
